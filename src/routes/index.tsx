@@ -33,14 +33,13 @@ function SiteNav() {
         className="max-w-6xl mx-auto flex items-center justify-between gap-4"
       >
         <a href="#top" className="flex items-center gap-3 group">
-          <span className="logo-mark size-12 rounded-2xl flex items-center justify-center">
-            <img src={logoUrl} alt="" className="size-9 object-contain" />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="display text-lg sm:text-xl text-ink">Libuše Stuňová</span>
-            <span className="text-[11px] uppercase tracking-[0.18em] text-gold-dark">
-              Účetnictví · Praha 4
-            </span>
+          <img
+            src={logoUrl}
+            alt="Libuše Stuňová · Účetnictví"
+            className="h-12 sm:h-14 w-auto object-contain"
+          />
+          <span className="hidden md:inline text-[11px] uppercase tracking-[0.2em] text-gold-dark border-l border-gold/30 pl-3">
+            Praha 4
           </span>
         </a>
 
