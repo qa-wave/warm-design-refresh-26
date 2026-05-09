@@ -62,7 +62,7 @@ function SiteNav() {
 
         <a
           href="#kontakt"
-          className="btn-gold hover:[&]:btn-gold-hover rounded-full px-5 sm:px-6 py-3 text-sm font-medium inline-flex items-center gap-2"
+          className="btn-gold hover:btn-gold-hover rounded-full px-5 sm:px-6 py-3 text-sm font-medium inline-flex items-center gap-2"
         >
           <span className="hidden sm:inline">Pojďme na kafe</span>
           <span className="sm:hidden">Na kafe</span>
@@ -102,13 +102,13 @@ function Hero() {
           <div className="fade-up-delay-3 flex flex-wrap gap-3">
             <a
               href="#kontakt"
-              className="btn-gold hover:[&]:btn-gold-hover rounded-full px-7 py-4 text-[15px] font-medium inline-flex items-center gap-2"
+              className="btn-gold hover:btn-gold-hover rounded-full px-7 py-4 text-[15px] font-medium inline-flex items-center gap-2"
             >
               Domluvíme si kafíčko <ArrowRight className="size-4" />
             </a>
             <a
               href="#sluzby"
-              className="btn-soft hover:[&]:btn-soft-hover rounded-full px-7 py-4 text-[15px] font-medium"
+              className="btn-soft hover:btn-soft-hover rounded-full px-7 py-4 text-[15px] font-medium"
             >
               Co všechno řeším
             </a>
