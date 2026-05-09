@@ -393,6 +393,123 @@ function About() {
   );
 }
 
+/* ───────────────────────── Client Zone ───────────────────────── */
+
+function ClientZone() {
+  const channels = [
+    {
+      Icon: Camera,
+      t: "Vyfoť doklad",
+      d: "Stačí fotka mobilem. Posíláš e-mailem, ostatní vyřeším já.",
+      tag: "Nejrychlejší",
+    },
+    {
+      Icon: MessageCircle,
+      t: "WhatsApp",
+      d: "Krátká otázka? Napiš. Odpovídám obvykle do hodiny v pracovní době.",
+      tag: "Bez stresu",
+    },
+    {
+      Icon: FolderLock,
+      t: "Sdílená složka",
+      d: "Pro pravidelné klienty zakládám zabezpečené úložiště s historií.",
+      tag: "Pro stálé",
+    },
+  ];
+
+  return (
+    <section
+      id="klientska-zona"
+      className="px-5 sm:px-8 md:px-12 py-20 md:py-28 scroll-mt-20"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          {/* Left intro */}
+          <div className="lg:col-span-5">
+            <p className="text-xs font-medium gold-grad mb-3 tracking-[0.22em] uppercase">
+              Klientská zóna
+            </p>
+            <h2 className="display text-4xl md:text-5xl text-ink leading-[1.05] mb-5">
+              Tvoje papíry
+              <br />
+              <em className="gold-grad">na pár kliků</em>.
+            </h2>
+            <p className="text-ink-soft leading-relaxed text-[15px] mb-8 max-w-md">
+              Žádný komplikovaný portál. Pošli mi doklady, jak ti to nejvíc vyhovuje —
+              a já se postarám, aby vše bylo na svém místě a včas.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="mailto:doklady@stunova.cz"
+                className="btn-gold hover:btn-gold-hover rounded-full px-6 py-3 text-sm font-medium inline-flex items-center gap-2"
+              >
+                <Mail className="size-4" />
+                doklady@stunova.cz
+              </a>
+              <a
+                href="#kontakt"
+                className="btn-soft hover:btn-soft-hover rounded-full px-6 py-3 text-sm font-medium inline-flex items-center gap-2"
+              >
+                <KeyRound className="size-4" />
+                Chci přístup do složky
+              </a>
+            </div>
+
+            <p className="mt-6 text-xs text-ink-soft inline-flex items-center gap-2">
+              <Lock className="size-3.5 text-gold-dark" />
+              Šifrovaný přenos · GDPR · mlčenlivost samozřejmostí
+            </p>
+          </div>
+
+          {/* Right channels */}
+          <div className="lg:col-span-7">
+            <div className="relative">
+              <div
+                className="absolute -inset-8 rounded-[3rem] blur-3xl opacity-50 -z-10"
+                style={{
+                  background:
+                    "radial-gradient(circle at 30% 30%, var(--gold) 0%, transparent 70%)",
+                }}
+                aria-hidden
+              />
+
+              <div className="card-warm rounded-[2rem] p-3 sm:p-4">
+                <ul className="space-y-2">
+                  {channels.map(({ Icon, t, d, tag }, i) => (
+                    <li
+                      key={t}
+                      className="group relative flex items-start gap-4 sm:gap-5 rounded-2xl p-5 sm:p-6 transition hover:bg-cream/60"
+                    >
+                      <span className="inline-flex size-12 shrink-0 rounded-2xl logo-mark items-center justify-center">
+                        <Icon className="size-5" strokeWidth={2} />
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+                          <h3 className="display text-xl text-ink">{t}</h3>
+                          <span className="text-[10px] uppercase tracking-[0.18em] text-gold-dark bg-gold/10 ring-1 ring-gold/30 rounded-full px-2 py-0.5">
+                            {tag}
+                          </span>
+                        </div>
+                        <p className="text-[14.5px] text-ink-soft leading-relaxed">
+                          {d}
+                        </p>
+                      </div>
+                      <span className="display gold-grad text-2xl/none opacity-40 group-hover:opacity-100 transition">
+                        0{i + 1}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────────────────────── Contact ───────────────────────── */
 
 function Contact() {
