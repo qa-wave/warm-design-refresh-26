@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail, Sparkles, FileText, Users, Calculator } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 import logoUrl from "@/assets/logo.png";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -36,11 +37,8 @@ function SiteNav() {
           <img
             src={logoUrl}
             alt="Libuše Stuňová · Účetnictví"
-            className="h-12 sm:h-14 w-auto object-contain"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain"
           />
-          <span className="hidden md:inline text-[11px] uppercase tracking-[0.2em] text-gold-dark border-l border-gold/30 pl-3">
-            Praha 4
-          </span>
         </a>
 
         <div className="hidden lg:flex items-center gap-1 card-warm rounded-full px-2 py-1.5">
