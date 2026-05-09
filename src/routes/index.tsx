@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Coffee, ArrowRight, Phone, Mail, Sparkles, FileText, Users, Calculator } from "lucide-react";
+import { ArrowRight, Phone, Mail, Sparkles, FileText, Users, Calculator } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
+import logoUrl from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -32,8 +33,8 @@ function SiteNav() {
         className="max-w-6xl mx-auto flex items-center justify-between gap-4"
       >
         <a href="#top" className="flex items-center gap-3 group">
-          <span className="coffee-mark size-11 rounded-2xl flex items-center justify-center">
-            <Coffee className="size-5" strokeWidth={2.25} />
+          <span className="logo-mark size-12 rounded-2xl flex items-center justify-center">
+            <img src={logoUrl} alt="" className="size-9 object-contain" />
           </span>
           <span className="flex flex-col leading-tight">
             <span className="display text-lg sm:text-xl text-ink">Libuše Stuňová</span>
@@ -64,8 +65,8 @@ function SiteNav() {
           href="#kontakt"
           className="btn-gold hover:btn-gold-hover rounded-full px-5 sm:px-6 py-3 text-sm font-medium inline-flex items-center gap-2"
         >
-          <span className="hidden sm:inline">Pojďme na kafe</span>
-          <span className="sm:hidden">Na kafe</span>
+          <span className="hidden sm:inline">Domluvit konzultaci</span>
+          <span className="sm:hidden">Konzultace</span>
           <ArrowRight className="size-4" />
         </a>
       </nav>
@@ -90,13 +91,12 @@ function Hero() {
           <h1 className="display fade-up-delay-1 text-[2.6rem] sm:text-6xl md:text-7xl leading-[1.02] mb-7 text-ink">
             Účetnictví,
             <br />
-            <span className="gold-grad italic">co tě nestresuje.</span>
+              <span className="gold-grad italic">se lví silou.</span>
           </h1>
 
           <p className="fade-up-delay-2 text-lg md:text-xl text-ink-soft leading-relaxed mb-9 max-w-xl">
-            Pro malé firmy a OSVČ, kterým nevyhovuje, když je účetní vidí jen jednou
-            ročně. Sednem si nad kávou, projdem si to spolu — a celý rok víš, jak na
-            tom jsi.
+              Pro malé firmy a OSVČ, kterým nevyhovuje, když je účetní vidí jen jednou
+              ročně. Pevně si stojím za tvými čísly — a celý rok víš, jak na tom jsi.
           </p>
 
           <div className="fade-up-delay-3 flex flex-wrap gap-3">
@@ -104,7 +104,7 @@ function Hero() {
               href="#kontakt"
               className="btn-gold hover:btn-gold-hover rounded-full px-7 py-4 text-[15px] font-medium inline-flex items-center gap-2"
             >
-              Domluvíme si kafíčko <ArrowRight className="size-4" />
+              Domluvit konzultaci <ArrowRight className="size-4" />
             </a>
             <a
               href="#sluzby"
@@ -130,22 +130,25 @@ function Hero() {
 
         <div className="lg:col-span-5 fade-up-delay-3 relative">
           <div
-            className="absolute -inset-10 rounded-[3rem] blur-3xl opacity-60 -z-10"
+            className="absolute -inset-10 rounded-[3rem] blur-3xl opacity-70 -z-10"
             style={{ background: "radial-gradient(circle at 60% 40%, var(--gold) 0%, transparent 70%)" }}
             aria-hidden
           />
 
           <article className="card-warm rounded-[2rem] p-8 md:p-10">
-            <div className="flex items-start justify-between gap-4 mb-6">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-gold-dark mb-2">
-                  Karta klienta
-                </p>
-                <h3 className="display text-2xl text-ink">Tvoje papíry,<br />moje starost.</h3>
+            <div className="flex flex-col items-center text-center mb-6">
+              <div className="relative mb-5">
+                <div
+                  className="absolute inset-0 rounded-full blur-2xl opacity-60"
+                  style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)" }}
+                  aria-hidden
+                />
+                <img src={logoUrl} alt="Logo Libuše Stuňová" className="relative size-32 object-contain drop-shadow-[0_8px_24px_oklch(0.566_0.082_67.5/0.35)]" />
               </div>
-              <span className="coffee-mark size-12 rounded-2xl flex items-center justify-center shrink-0">
-                <Coffee className="size-5" />
-              </span>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-gold-dark mb-2">
+                Karta klienta
+              </p>
+              <h3 className="display text-2xl text-ink">Tvoje papíry,<br />moje starost.</h3>
             </div>
 
             <ul className="space-y-3 mb-7">
@@ -230,7 +233,7 @@ function Services() {
               key={t}
               className="card-warm rounded-3xl p-7 md:p-8 transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-24px_oklch(0.566_0.082_67.5/0.40)]"
             >
-              <span className="inline-flex size-12 rounded-2xl coffee-mark items-center justify-center mb-6">
+              <span className="inline-flex size-12 rounded-2xl logo-mark items-center justify-center mb-6">
                 <Icon className="size-5" strokeWidth={2} />
               </span>
               <h3 className="display text-2xl mb-3 text-ink">{t}</h3>
@@ -248,7 +251,7 @@ function Services() {
 
 function Process() {
   const steps = [
-    { n: "01", t: "Kafíčko",        d: "Sejdeme se v Praze 4 nebo online. Půl hoďky, zdarma. Řekneš mi, co máš, já ti řeknu, co s tím." },
+    { n: "01", t: "Seznámení",      d: "Sejdeme se v Praze 4 nebo online. Půl hoďky, zdarma. Řekneš mi, co máš, já ti řeknu, co s tím." },
     { n: "02", t: "Nastavení",      d: "Pošleš mi pár dokladů, podepíšeme si plnou moc, převezmu to po tvém starém účetním (i s problémy)." },
     { n: "03", t: "Měsíční rytmus", d: "Posíláš mi doklady (e-mail, fotka, klidně WhatsApp). Já zpracuju, ty schvaluješ, hotovo." },
     { n: "04", t: "Klid",           d: "Žádné překvapení v březnu. Vždycky vidíš, jak na tom jsi a co tě čeká za kvartál." },
@@ -261,7 +264,7 @@ function Process() {
             Jak to chodí
           </p>
           <h2 className="display text-4xl md:text-5xl text-ink">
-            Začínáme <em className="gold-grad">vždycky kafem</em>.
+            Začínáme <em className="gold-grad">vždycky osobně</em>.
           </h2>
         </header>
 
@@ -293,13 +296,13 @@ function About() {
         <div className="grid md:grid-cols-3 gap-10 items-start">
           <div className="md:col-span-1">
             <div
-              className="aspect-square rounded-3xl flex items-center justify-center relative overflow-hidden"
+              className="aspect-square rounded-3xl flex items-center justify-center relative overflow-hidden p-8"
               style={{
                 background:
                   "linear-gradient(135deg, oklch(0.945 0.058 86) 0%, oklch(0.875 0.060 82) 100%)",
               }}
             >
-              <Coffee className="size-16 text-gold-dark" strokeWidth={1.4} />
+              <img src={logoUrl} alt="Logo" className="relative z-10 w-full h-full object-contain" />
               <div
                 className="absolute inset-0 opacity-30 mix-blend-multiply"
                 style={{
@@ -367,11 +370,11 @@ function Contact() {
         />
 
         <div className="relative">
-          <span className="inline-flex size-14 rounded-2xl bg-white/10 backdrop-blur-sm items-center justify-center mb-6 ring-1 ring-white/15">
-            <Coffee className="size-6" />
+          <span className="inline-flex size-20 rounded-2xl bg-white/10 backdrop-blur-sm items-center justify-center mb-6 ring-1 ring-white/15 p-3">
+            <img src={logoUrl} alt="" className="w-full h-full object-contain" />
           </span>
           <h2 className="display text-4xl md:text-6xl mb-5 leading-[1.05]">
-            Tak co, dáme to <em>kafíčko</em>?
+            Sednem si k <em>tvým číslům</em>?
           </h2>
           <p className="text-lg text-[#e0c890] mb-10 max-w-xl mx-auto leading-relaxed">
             Půl hoďky, online nebo v Praze 4, zdarma. Bez závazku. Když si nepadnem do
