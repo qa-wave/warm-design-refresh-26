@@ -75,25 +75,60 @@ function SiteNav() {
 
 function Hero() {
   return (
-    <section id="top" className="px-5 sm:px-8 md:px-12 pt-14 md:pt-20 pb-16 md:pb-24">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="top" className="px-5 sm:px-8 md:px-12 pt-10 md:pt-14 pb-16 md:pb-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Video header band */}
+        <div className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden mb-12 md:mb-16 aspect-[21/9] card-warm">
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(105deg, oklch(0.215 0.030 55 / 0.55) 0%, oklch(0.215 0.030 55 / 0.15) 55%, transparent 80%)",
+            }}
+            aria-hidden
+          />
+          <div className="absolute inset-0 flex items-end sm:items-center">
+            <div className="p-6 sm:p-10 md:p-14 max-w-xl text-white">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-md ring-1 ring-white/25 px-3 py-1.5 text-[11px] tracking-[0.18em] uppercase mb-4 sm:mb-6">
+                <span className="size-1.5 rounded-full bg-gold-light" /> Beru klienty od ledna 2026
+              </span>
+              <p className="display italic text-2xl sm:text-3xl md:text-4xl leading-[1.1] text-gold-light/95 drop-shadow">
+                Postav si nohy nahoru.
+              </p>
+              <p className="display text-3xl sm:text-5xl md:text-6xl leading-[1.02] mt-1 drop-shadow-md">
+                Papíry mám.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div className="lg:col-span-7">
           <div className="fade-up inline-flex items-center gap-2 card-warm rounded-full px-4 py-2 mb-8">
             <span className="pulse-dot size-2 rounded-full bg-gold-dark" aria-hidden />
             <span className="text-xs tracking-wide text-ink-soft">
-              Beru nové klienty od ledna 2026
+              Účetnictví v Praze 4 · u kafe i online
             </span>
           </div>
 
           <h1 className="display fade-up-delay-1 text-[2.6rem] sm:text-6xl md:text-7xl leading-[1.02] mb-7 text-ink">
             Účetnictví,
             <br />
-              <span className="gold-grad italic">se lví silou.</span>
+              <span className="gold-grad italic">u kterého se nestresuješ.</span>
           </h1>
 
           <p className="fade-up-delay-2 text-lg md:text-xl text-ink-soft leading-relaxed mb-9 max-w-xl">
               Pro malé firmy a OSVČ, kterým nevyhovuje, když je účetní vidí jen jednou
-              ročně. Pevně si stojím za tvými čísly — a celý rok víš, jak na tom jsi.
+              ročně. Sednem si k tomu, dáme to dohromady — a celý rok víš, jak na tom jsi.
           </p>
 
           <div className="fade-up-delay-3 flex flex-wrap gap-3">
@@ -176,6 +211,7 @@ function Hero() {
               ))}
             </div>
           </article>
+        </div>
         </div>
       </div>
     </section>
