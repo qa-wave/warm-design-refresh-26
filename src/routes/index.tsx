@@ -1,5 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Phone, Mail, Sparkles, FileText, Users, Calculator } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  Sparkles,
+  FileText,
+  Users,
+  Calculator,
+  Lock,
+  Camera,
+  MessageCircle,
+  FolderLock,
+  KeyRound,
+} from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 import logoUrl from "@/assets/logo.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
@@ -17,6 +30,7 @@ function Index() {
         <Services />
         <Process />
         <About />
+        <ClientZone />
         <Contact />
       </main>
       <SiteFooter />
@@ -46,6 +60,7 @@ function SiteNav() {
             { href: "#sluzby", label: "Služby" },
             { href: "#proces", label: "Jak to chodí" },
             { href: "#o-mne", label: "O mně" },
+            { href: "#klientska-zona", label: "Klientská zóna" },
             { href: "#kontakt", label: "Kontakt" },
           ].map((it) => (
             <a
