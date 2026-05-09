@@ -163,8 +163,15 @@
     0 8px 24px -8px oklch(0.566 0.082 67.5 / 0.10);
 }
 
-/* Coffee glyph used in nav */
+/* Logo / icon mark used in nav and service cards */
 @utility coffee-mark {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: white;
+  box-shadow:
+    0 1px 0 0 oklch(1 0 0 / 0.4) inset,
+    0 8px 16px -6px oklch(0.566 0.082 67.5 / 0.45);
+}
+@utility logo-mark {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: white;
   box-shadow:
